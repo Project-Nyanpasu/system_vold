@@ -89,7 +89,8 @@ void defaultkey_precreate_dm_device() {
         LOG(INFO) << "Not pre-creating userdata encryption device; device already exists";
         return;
     }
-    if (!dm.CreateEmptyDevice(kDmNameUserdata)) {
+
+    if (!dm.CreatePlaceholderDevice(kDmNameUserdata)) {
         LOG(ERROR) << "Failed to pre-create userdata metadata encryption device";
     }
 }
